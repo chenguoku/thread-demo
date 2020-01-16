@@ -22,9 +22,15 @@ public class TaskMain {
         ForkJoinPool forkJoinPool = new ForkJoinPool(5);
         // list:需要处理的数据
         TaskForkJoin taskForkJoin = new TaskForkJoin(list);
+        // 执行,获取Future
         ForkJoinTask<Long> submitResult = forkJoinPool.submit(taskForkJoin);
-
+        System.out.println("主线程");
         System.out.println(submitResult.get());
+
+        // 等待获取结果
+//        Long result = forkJoinPool.invoke(taskForkJoin);
+//        System.out.println("主线程");
+//        System.out.println(result);
     }
 
     public static List<Long> getDataList() {

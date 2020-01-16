@@ -22,6 +22,7 @@ public class ActionMain {
         ForkJoinPool forkJoinPool = new ForkJoinPool(3);
         // dataList:需要处理的数据
         ActionForkJoin actionForkJoin = new ActionForkJoin(dataList);
+        // 异步执行
         forkJoinPool.execute(actionForkJoin);
 
         //阻塞当前线程直到 ForkJoinPool 中所有的任务都执行结束
