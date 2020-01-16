@@ -42,8 +42,11 @@ public class TaskForkJoin extends RecursiveTask<Long> {
         TaskForkJoin aTask = new TaskForkJoin(records.subList(0, size / 2));
         //第二个分组
         TaskForkJoin bTask = new TaskForkJoin(records.subList(size / 2, records.size()));
-        //两个任务并发执行起来
+        //两个任务并发执行起来 ,效率高
         invokeAll(aTask, bTask);
+
+//        aTask.fork();
+//        bTask.fork();
 
         return aTask.join() + bTask.join();
     }

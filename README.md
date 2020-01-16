@@ -1,5 +1,5 @@
 # 多线程的使用
-
+demo地址: https://github.com/chenguoku/thread-demo 
 ## 线程3种创建方式
 
 1. 实现Runnable接口
